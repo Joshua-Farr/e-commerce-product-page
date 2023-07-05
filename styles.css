@@ -81,8 +81,8 @@ body{
 }
 
 main{
-    max-width: 375px;
-    border: 1px solid grey;
+    min-width: 375px;
+    position: relative;
 }
 
 /* Header Stylings */
@@ -95,8 +95,10 @@ header{
     background-color: white;
     height: 67px;
     justify-content: space-between;
-    margin-right: 1.5em;
-    margin-left: 1.5em;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    z-index: 10;
+    width: 100%;
 }
 
 .logo{
@@ -110,16 +112,71 @@ header{
 
 }
 
+.customer-shopping-cart:hover{
+    cursor: pointer;
+}
+
 .avatar{
     width: 25px;
     height: 25px;
     margin-left: 1em;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.avatar:hover{
+    border: 2px solid var(--orange);
+    border-radius: 50%;
+
 }
 
 /* Lower Half Styling */
 
 .sneaker-details{
     margin: 1.5em;
+}
+
+
+
+/* Menu Bar */
+
+
+.main-nav-menu{
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    background-color: white;
+    height: 100vh;
+    width: 66%;
+    padding: 2em;
+    box-shadow:0 0 0 10000px rgba(0,0,0,.75);
+}
+
+
+.main-nav-menu-list{
+    font-weight: 700;
+    font-size: 1.2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav-menu-list li:first-of-type{
+    margin-top: 2.5em;
+}
+
+.main-nav-menu-list li{
+    margin-top: 1em;
+}
+
+.main-nav-menu-list li:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+}
+
+.close-menu:hover{
+    cursor: pointer;
 }
 
 
@@ -151,7 +208,37 @@ p{
 
 /* image-carousel styling */
 
+.image-carousel{
+    position: relative;
+}
 
+/* .product-img{
+
+} */
+
+
+.toggle-btn{
+    position: absolute;
+    background-color: white;
+    padding: .8em;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+}
+
+.previous-item{
+    top: 50%;
+    transform: rotate(180deg);
+    margin-left: 1em;
+}
+
+.next-item{
+    top: 50%;
+    right: 0%;
+    margin-right: 1em;
+
+}
 
 
 /* Pricing / Add to cart styling */
@@ -178,15 +265,14 @@ p{
 
 .base-price{
     font-size: 1em;
-    color: var(--dark-grayish-blue);
+    color: var(--grayish-blue);
     text-decoration: line-through;
 }
 
-
-/* <h2 class="adjusted-price">$125.00</h2>
-<h3 class="applied-discount">50%</h3>
-<h3 class="base-price">$250.00</h3> */
-
+button,
+.item-count:hover{
+    cursor: pointer;
+}
 
 .add-to-cart-section{
     display: flex;
@@ -217,3 +303,83 @@ button{
     padding: 1em;
     justify-content: center;
 }
+
+button:hover{
+    background-color: hsl(26, 100%, 63%);
+}
+
+/* Shopping cart styling */
+
+
+.hide{
+    display: none;
+}
+
+
+.shopping-cart-card{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    
+    background-color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    color: var(--dark-grayish-blue);
+    width: 360px;
+    text-align: center;
+}
+
+.item-thumbnail{
+    width: 55px;
+    height: 55px;
+    border-radius: 5px;
+}
+
+.item-details,
+.order-details{
+    display: flex;
+}
+
+.order-details{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+
+}
+
+
+.item-details{
+    flex-direction: column;
+}   
+
+h3{
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.total-price{
+    color: black;
+}
+
+.shopping-cart-card p{
+    color: black;
+    border-bottom: 1px solid rgba(104, 112, 125, 0.281);
+    padding: 1.5em;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.cart-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 190px;
+    padding: 1.5em;
+
+}
+
+
