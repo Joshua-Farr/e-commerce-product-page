@@ -1,0 +1,219 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* End of CSS Reset */
+
+:root{
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(25, 100%, 94%);
+    
+    
+    --very-dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    /* (with 75% opacity for lightbox background) */
+
+}
+
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+main{
+    max-width: 375px;
+    border: 1px solid grey;
+}
+
+/* Header Stylings */
+
+header{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    height: 67px;
+    justify-content: space-between;
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+}
+
+.logo{
+    margin-right: auto;
+    margin-left: 1em;
+}
+
+.title__logo{
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+.avatar{
+    width: 25px;
+    height: 25px;
+    margin-left: 1em;
+}
+
+/* Lower Half Styling */
+
+.sneaker-details{
+    margin: 1.5em;
+}
+
+
+/* Typography */
+
+h4{
+    color: var(--orange);
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    margin-bottom: .8em;
+}
+
+p{
+    color: var(--dark-grayish-blue);
+    font-size: 1rem;
+    margin-bottom: 1em;;
+}
+
+.adjusted-price,
+.product-title{
+    font-size: 1.8rem;
+}
+
+.product-title{
+    line-height: 32px;
+    margin-bottom: .8em;
+}
+
+/* image-carousel styling */
+
+
+
+
+/* Pricing / Add to cart styling */
+
+.price-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+.adjusted-price{
+    margin-right: .5em;
+}
+
+.applied-discount{
+    font-size: 1em;;
+    margin-right: auto;
+    background-color: var(--pale-orange);
+    padding: .2em .7em;
+    border-radius: 8px;
+    color: var(--orange);
+}
+
+.base-price{
+    font-size: 1em;
+    color: var(--dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+
+/* <h2 class="adjusted-price">$125.00</h2>
+<h3 class="applied-discount">50%</h3>
+<h3 class="base-price">$250.00</h3> */
+
+
+.add-to-cart-section{
+    display: flex;
+    width: 100%;
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    background-color: var(--light-grayish-blue);
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+.shopping-cart-img-add-to-cart{
+    fill: white;
+    margin-right: 1em;
+}
+
+
+button{
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--orange);
+    font-weight: 700;
+    display: flex;
+    width: 100%;
+    padding: 1em;
+    justify-content: center;
+}
