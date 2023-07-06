@@ -78,6 +78,7 @@ select {
 
 body{
     font-family: 'Kumbh Sans', sans-serif;
+    user-select: none;
 }
 
 main{
@@ -152,6 +153,16 @@ header{
     box-shadow:0 0 0 10000px rgba(0,0,0,.75);
 }
 
+.main-nav-menu-list-desktop{
+    display: none;
+    margin-right: auto;
+
+    font-size: 1.2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 
 .main-nav-menu-list{
     font-weight: 700;
@@ -210,11 +221,12 @@ p{
 
 .image-carousel{
     position: relative;
+    /* min-width: 100vw; */
 }
 
-/* .product-img{
-
-} */
+ .product-img{
+    z-index: 1;
+} 
 
 
 .toggle-btn{
@@ -261,12 +273,14 @@ p{
     padding: .2em .7em;
     border-radius: 8px;
     color: var(--orange);
+    font-weight: 700;
 }
 
 .base-price{
     font-size: 1em;
     color: var(--grayish-blue);
     text-decoration: line-through;
+    font-weight: 700;
 }
 
 button,
@@ -379,6 +393,113 @@ h3{
     justify-content: center;
     height: 190px;
     padding: 1.5em;
+
+}
+
+@media (min-width: 1000px){
+
+
+    main{
+        max-width: 1440px;
+        position: relative;
+        margin: 0 auto;
+        border:4px solid green;
+
+
+    }
+
+    /* Header Styling */
+  
+    body{
+        display: flex;
+
+    }
+
+
+    header{
+        border-bottom: 5px solid --light-grayish-blue;
+        
+    }
+
+    .logo{
+        margin: 0;
+    }
+
+    .avatar{
+        width: 55px;
+        height: 55px;
+        margin-left: 3em;
+    }
+
+    .hamburger-menu{
+        display: none;
+    }
+
+    .main-nav-menu-list-desktop{
+        display: flex;
+        margin-right: auto;
+        font-size: 1rem;
+        margin-left: 3.75em;
+    }
+
+    .main-nav-menu-list-desktop li{
+        margin-right:2em;
+    }
+
+
+    /* Typography */
+
+    .product-title{
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+
+    /* Page Layout */
+
+    .sneaker-details{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 4px solid saddlebrown;
+
+    }
+
+
+
+
+    /* Product Styling */
+    .product-details{
+        display: flex;
+        border: 4px solid gold;
+
+    }
+
+    
+    .product-images{
+        border: 3px solid firebrick;
+    }
+
+    .product-thumbnails{
+        display: flex;
+        justify-content: space-between;
+        max-height: 90px;
+        max-width: 90px;
+        margin-top: 1.5em;
+    }
+
+
+    .add-to-cart-section{
+        margin: 0;
+    }
+
+    .buttons{
+        display: flex;
+        align-items: center;
+
+    }
+
 
 }
 

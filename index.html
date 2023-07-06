@@ -13,8 +13,15 @@
   <body>
     <main>
       <header>
-        <img src="./images/icon-menu.svg" id="hamburger-menu" alt="">
+        <img src="./images/icon-menu.svg" id="hamburger-menu" class="hamburger-menu" alt="">
         <img src="./images/logo.svg" class="logo" alt="">
+        <ul class="main-nav-menu-list-desktop">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
         <img src="./images/icon-cart.svg" class="customer-shopping-cart" id="customer-shopping-cart" alt="">
         <img src="./images/image-avatar.png" class="avatar" alt="">
         
@@ -32,42 +39,52 @@
         </ul>
       </div>
 
-      <div class="image-carousel">
-        <img src="./images/image-product-1.jpg" class="product-img" alt="">
-        <!-- <img src="./images/image-product-2.jpg" class="product-img" alt="">
-        <img src="./images/image-product-3.jpg" class="product-img" alt="">
-        <img src="./images/image-product-4.jpg" class="product-img" alt=""> -->
+      <div class="product-details">
+        <div class="image-carousel">
+          <div class="product-images" id="product-images">
+            <img src="./images/image-product-1.jpg" class="product-img" id="product-img" alt="">
+              <div class="product-thumbnails">
+                <img src="./images/image-product-1-thumbnail.jpg" class="product-thumbnail" alt="">
+                <img src="./images/image-product-2-thumbnail.jpg" class="product-thumbnail" alt="">
+                <img src="./images/image-product-3-thumbnail.jpg" class="product-thumbnail" alt="">
+                <img src="./images/image-product-4-thumbnail.jpg" class="product-thumbnail" alt="">
+              </div>
+          </div>
 
-        <img src="./images/icon-next.svg" class="previous-item toggle-btn" alt="see previous photo">
-        <img src="./images/icon-next.svg" class="next-item toggle-btn" alt="see next photo">
+          <img src="./images/icon-next.svg" class="previous-item toggle-btn" id="previous-item" alt="see previous photo">
+          <img src="./images/icon-next.svg" class="next-item toggle-btn" id="next-item" alt="see next photo">
 
-      </div>
-
-      <div class ="sneaker-details">
-        <h4>Sneaker Company</h4>
-
-        <h2 class="product-title">Fall Limited Edition Sneakers</h2>
-
-        <p class="product-desctiption">These low-profile sneakers are your perfect casual wear companion. Featuring a 
-        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-
-        <div class="price-details">
-          <h2 class="adjusted-price">$125.00</h2>
-          <h3 class="applied-discount">50%</h3>
-          <h3 class="base-price">$250.00</h3>
         </div>
 
-        <div class="add-to-cart-section">
-          <img src="./images/icon-minus.svg" class="item-count" id="subtract-one" alt="">
-          
-          <span class="num-items-to-add-to-cart" id="num-items-to-add-to-cart">0</span>
-          <img src="./images/icon-plus.svg" class="item-count" id="add-one"alt="">
-        </div>
+        <div class ="sneaker-details">
+          <h4>Sneaker Company</h4>
 
-          <button id="add-to-cart-btn"><img src="./images/icon-cart.svg" alt="" class="shopping-cart-img-add-to-cart">Add to cart</button>
+          <h2 class="product-title">Fall Limited Edition Sneakers</h2>
+
+          <p class="product-desctiption">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+          <div class="price-details">
+            <h2 class="adjusted-price">$125.00</h2>
+            <h3 class="applied-discount">50%</h3>
+            <h3 class="base-price">$250.00</h3>
+          </div>
+
+            <div class="buttons">
+              <div class="add-to-cart-section">
+                <img src="./images/icon-minus.svg" class="item-count" id="subtract-one" alt="">
+                
+                <span class="num-items-to-add-to-cart" id="num-items-to-add-to-cart">0</span>
+                <img src="./images/icon-plus.svg" class="item-count" id="add-one"alt="">
+              </div>
+            
+              <button class="add-to-cart-btn" id="add-to-cart-btn"><img src="./images/icon-cart.svg" alt="" class="shopping-cart-img-add-to-cart">Add to cart</button>
+          </div>
+        </div>
       </div>
 
-      <div class="shopping-cart-card " id="shopping-cart-card">
+
+      <div class="shopping-cart-card hide" id="shopping-cart-card">
         <p>Cart</p>
         <div id="cart-details" class="cart-inner">
           <!-- Your cart is empty. -->
