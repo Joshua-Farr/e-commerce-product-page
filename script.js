@@ -1,3 +1,6 @@
+import Product from "./product.js"
+
+
 const customerCart = document.getElementById("shopping-cart-card");
 const navigationMenu = document.getElementById("main-nav-menu");
 const shoppingCartDisplayArea = document.getElementById("cart-details");
@@ -40,6 +43,8 @@ document.addEventListener("click", function(e){
     }else if(e.target.id ==="add-one"){
             numCartItems++;
             numItems.innerText = numCartItems;
+    }else if(e.target.id === "add-to-cart-btn"){
+        addToCart();
     }else if(e.target.id === "next-item" || e.target.id ==="previous-item"){
         console.log("changing image!")
         changeImage(e);
@@ -50,44 +55,41 @@ document.addEventListener("click", function(e){
         imageIndex = index;
         console.log(imageIndex);
          document.getElementById("product-img").src = productImages[imageIndex];
+    }else if( e.target.id === "remove-from-cart-btn"){
+        shoppingCart.pop();
+        shoppingCartDisplayArea.innerHTML = "";
     }
 });
 
 
 
-// function addToCart(name, imgUrl, price, quantity){
-//     const item = {
-//         itemName: name,
-//         itemImg: imgUrl,
-//         itemPrice: price,
-//         itemQuantity:quantity
-//     }
-//     return item;
-// }
- 
 
-function addItemToShoppingCart(item){
-    shoppingCart.push(addToCart(item)); //???? Not sure...
-}
+function addToCart(){
+    if(numItems.innerText){
+        console.log("Adding to the cart!", numItems.innerText)
+    }
+    
+    if(!shoppingCart.length){
+        const name = document.getElementById("product-title").innerText;
+        const imgUrl = document.getElementById("product-img").src;
+        const price = document.getElementById("adjusted-price")
+            .innerText.slice(1,document.getElementById("adjusted-price").innerText.length);;
+        const quantity = numItems.innerText;
+        
+        let newProduct = new Product(name, imgUrl, price, quantity);
+        console.log(newProduct);
+    
+        shoppingCart.push(newProduct);
+    }else {
+        shoppingCart[0].updateQuantity(numItems.innerText);
 
-function calculateTotalPrice(price, quantity){
-    return price * quantity;
-}
 
-function renderShoppingCart(){
-
-    // console.log("rendering shopping cart")
-    shoppingCartDisplayArea.innerHTML +=
-    `<div class="order-details">
-        <img src="./images/image-product-1-thumbnail.jpg" class="item-thumbnail" alt="">
-            <div class="item-details">
-                <h3>Fall Limited Edition Sneakers</h3>
-                <h3>$125.00 x 3 <span class ="total-price"><strong>$375.00</strong></span></h3>
-            </div>
-        <img src="./images/icon-delete.svg" alt="">
-    </div>
-  <button class="checkout-button">Checkout</button>`
-
+    }
+    
+    numItems.innerText = 0;
+    numCartItems = 0;
+    console.log(shoppingCart);
+    renderShoppingCart();
 }
 
 
@@ -111,15 +113,19 @@ function changeImage(e){
     currentImage.src = productImages[imageIndex];
 }
 
+function renderShoppingCart(){
+    shoppingCartDisplayArea.innerHTML = ""
 
-
-function addToCart(){
-    if(numItems.innerText){
-        
-
-
-        numItems.innerText = 0;
+    for(let i=0; i< shoppingCart.length; i++){
+        console.log(shoppingCart[i])
+        shoppingCartDisplayArea.innerHTML+=shoppingCart[i].shoppingCartHtml();
     }
+    shoppingCartDisplayArea.innerHTML += `<button class="checkout-button">Checkout</button>`;
+}
+
+
+function removeFromShoppingCart(){
+
 }
 
 
@@ -132,7 +138,3 @@ function addToCart(){
 
 
 
-
-renderShoppingCart();
-
-addToCart("Fall Limited Sneakers", 125, 3);

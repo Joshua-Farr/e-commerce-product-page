@@ -164,6 +164,13 @@ header{
 }
 
 
+.main-nav-menu-list-desktop li:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+}
+
+
 .main-nav-menu-list{
     font-weight: 700;
     font-size: 1.2rem;
@@ -268,6 +275,11 @@ p{
 
 .adjusted-price{
     margin-right: .5em;
+}
+
+.additonal-details{
+    display: flex;
+    align-items: center;
 }
 
 .applied-discount{
