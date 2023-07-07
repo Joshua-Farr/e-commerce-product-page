@@ -65,31 +65,32 @@ document.addEventListener("click", function(e){
 
 
 function addToCart(){
-    if(numItems.innerText){
+    if(parseInt(numItems.innerText)){
         console.log("Adding to the cart!", numItems.innerText)
-    }
-    
-    if(!shoppingCart.length){
-        const name = document.getElementById("product-title").innerText;
-        const imgUrl = document.getElementById("product-img").src;
-        const price = document.getElementById("adjusted-price")
-            .innerText.slice(1,document.getElementById("adjusted-price").innerText.length);;
-        const quantity = numItems.innerText;
+   
+        if(!shoppingCart.length){
+            const name = document.getElementById("product-title").innerText;
+            const imgUrl = document.getElementById("product-img").src;
+            const price = document.getElementById("adjusted-price")
+                .innerText.slice(1,document.getElementById("adjusted-price").innerText.length);;
+            const quantity = numItems.innerText;
+            
+            let newProduct = new Product(name, imgUrl, price, quantity);
+            console.log(newProduct);
         
-        let newProduct = new Product(name, imgUrl, price, quantity);
-        console.log(newProduct);
-    
-        shoppingCart.push(newProduct);
-    }else {
-        shoppingCart[0].updateQuantity(numItems.innerText);
+            shoppingCart.push(newProduct);
+        }else {
+            shoppingCart[0].updateQuantity(numItems.innerText);
 
 
-    }
-    
-    numItems.innerText = 0;
-    numCartItems = 0;
-    console.log(shoppingCart);
+        }
+        
+        numItems.innerText = 0;
+        numCartItems = 0;
+        console.log(shoppingCart);
     renderShoppingCart();
+    
+    }
 }
 
 
