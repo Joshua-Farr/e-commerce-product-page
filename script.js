@@ -43,6 +43,13 @@ document.addEventListener("click", function(e){
     }else if(e.target.id === "next-item" || e.target.id ==="previous-item"){
         console.log("changing image!")
         changeImage(e);
+    }else if(e.target.id === "product-thumbnail"){
+        const index = e.target.dataset.index;
+        console.log(index);
+
+        imageIndex = index;
+        console.log(imageIndex);
+         document.getElementById("product-img").src = productImages[imageIndex];
     }
 });
 
@@ -89,13 +96,13 @@ function changeImage(e){
     const currentImage = document.getElementById("product-img");
 
     if(e.target.id === "next-item"){
-        if(imageIndex === 3){
+        if(imageIndex === 3 || imageIndex === 4 ){
             imageIndex = 0;
         } else{
             imageIndex++;  
         }
     }else if(e.target.id === "previous-item"){
-        if(imageIndex === 0){
+        if(imageIndex === 0 || imageIndex === -1){
             imageIndex = 3;
         } else {
             imageIndex--;
